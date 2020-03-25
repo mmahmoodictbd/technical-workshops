@@ -1,0 +1,23 @@
+# Docker
+
+Manage softwares with docker!
+
+#### Prerequisites
+
+- Install Docker.
+- Install Docker Compose.
+
+
+#### Verify
+
+```
+$ docker --version
+
+Docker version 19.03.8, build afacb8b
+```
+
+```
+$ docker-compose -version
+
+docker-compose version 1.25.4, build 8d51620a
+```

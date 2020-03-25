@@ -1,0 +1,16 @@
+# Git and Github Basics
+
+How to store your code?
+
+#### Prerequisites
+- Open an account in http://github.com/
+- Install Git and Git Bash.
+- and verify!
+
+
+#### Verify if you have JDK installed properly
+```
+$ git --version
+
+git version 2.21.1 (Apple Git-122.3)
+```

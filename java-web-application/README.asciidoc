@@ -1,0 +1,10 @@
+# Java Web Application
+
+Let's learn how to build Web Application in Java.
+
+
+#### Prerequisites
+
+- Any JDK (e.g. OpenJDK 11).
+- Maven 3.6.x
+- IDE (IntelliJ / Eclipse / Visual Studio Code).
