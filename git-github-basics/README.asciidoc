@@ -8,7 +8,7 @@ How to store your code?
 - and verify!
 
 
-#### Verify if you have JDK installed properly
+#### Verify
 ```
 $ git --version
 
