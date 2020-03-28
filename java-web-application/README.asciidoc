@@ -8,3 +8,11 @@ Let's learn how to build Web Application in Java.
 - Any JDK (e.g. OpenJDK 11).
 - Maven 3.6.x
 - IDE (IntelliJ / Eclipse / Visual Studio Code).
+
+
+#### Sample Project
+
+Start with https://start.spring.io/[Spring Initializr].
+
+image::images/spring-initializr.png[spring-initializr screenshot]
+
