@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Medicine Shop Inventory - Add Product</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .main {
+            float: right;
+            padding-right: 5%;
+            padding: 2%;
+            opacity: 0.95;
+            border-top: 3px solid #FFFFFF;
+        }
+
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+
+<div id='container'>
+    <div class='main centered'>
+
+        <form action="#" th:action="@{/admin/inventory}" th:object="${productCreateRequest}" method="post">
+            <fieldset>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><label for="name">Name</label></td>
+                            <td><input id="name" type="text" th:field="*{name}"/></td>
+                            <td><span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="description">Description</label></td>
+                            <td><input id="description" type="text" th:field="*{description}"/></td>
+                            <td><span style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="price">Price</label></td>
+                            <td><input id="price" type="text" th:field="*{price}"/></td>
+                            <td><span style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="expireDate">Expire</label></td>
+                            <td><input id="expireDate" type="date" th:field="*{expireDate}"/></td>
+                            <td><span style="color: red" th:if="${#fields.hasErrors('expireDate')}" th:errors="*{expireDate}">Expire date Error</span></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><input type="submit" id="submitButton" th:value="Save"></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </fieldset>
+        </form>
+
+    </div>
+</div>
+
+</body>
+
+</html>
