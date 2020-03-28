@@ -21,3 +21,109 @@ Java version: 11.0.6, vendor: AdoptOpenJDK, runtime: /Users/mossaddeque/.sdkman/
 Default locale: en_NL, platform encoding: UTF-8
 OS name: "mac os x", version: "10.15.4", arch: "x86_64", family: "mac"
 ```
+
+
+#### Sample Maven Project
+
+```
+$ cd java-maven-basics
+$ mvn archetype:generate -DgroupId=com.unloadbrain -DartifactId=hello-world -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=f
+```
+
+```
+$ tree hello-world
+
+hello-world
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- java
+    |       `-- com
+    |           `-- unloadbrain
+    |               `-- App.java
+    `-- test
+        `-- java
+            `-- com
+                `-- unloadbrain
+                    `-- AppTest.java
+
+9 directories, 3 files
+```
+
+#### Basic commands
+```
+$ cd hello-world
+$ mvn compile
+$ tree .
+
+.
+|-- pom.xml
+|-- src
+|   |-- main
+|   |   `-- java
+|   |       `-- com
+|   |           `-- unloadbrain
+|   |               `-- App.java
+|   `-- test
+|       `-- java
+|           `-- com
+|               `-- unloadbrain
+|                   `-- AppTest.java
+`-- target
+    |-- classes
+    |   `-- com
+    |       `-- unloadbrain
+    |           `-- App.class
+    |-- generated-sources
+    |   `-- annotations
+    `-- maven-status
+        `-- maven-compiler-plugin
+            `-- compile
+                `-- default-compile
+                    |-- createdFiles.lst
+                    `-- inputFiles.lst
+
+19 directories, 6 files
+```
+
+```
+$ mvn clean compile
+$ mvn package
+$ java -cp target/hello-world-1.0-SNAPSHOT.jar com.unloadbrain.App
+```
+
+
+#### Advanced
+
+```
+$ cat ~/.m2/settings.xml
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <server>
+      <id>github</id>
+      <username>mmahmoodictbd</username>
+      <password>TOKEN</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>defaultProfile</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>github</id>
+          <name>GitHub mmahmoodictbd Apache Maven Packages</name>
+          <url>https://maven.pkg.github.com/mmahmoodictbd</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+</settings>
+```
