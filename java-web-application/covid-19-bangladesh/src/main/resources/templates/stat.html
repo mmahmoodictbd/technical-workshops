@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Covid-19 Bangladesh Data</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <style>
+            .main {
+                float: right;
+                padding-right: 5%;
+                color: white;
+                padding: 2%;
+                opacity: 0.95;
+                border-top:3px solid #FFFFFF;
+            }
+
+            .centered {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id='container'>
+            <div class='main centered'>
+
+                <table class="table">
+                    <caption th:text="'আপডেট সময়: ' + ${lastUpdated}"></caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">আক্রান্ত</th>
+                        <th scope="col">মৃত্যু</th>
+                        <th scope="col">সুস্থ</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span th:text="${affected}"> Affected </span></td>
+                        <td><span th:text="${death}"> Death </span></td>
+                        <td><span th:text="${recovered}"> Death </span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>
