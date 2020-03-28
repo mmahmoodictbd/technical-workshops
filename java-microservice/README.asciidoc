@@ -9,3 +9,16 @@ Keep things small!
 - Maven 3.6.x.
 - IDE (IntelliJ / Eclipse / Visual Studio Code).
 
+
+```
+http http://localhost:8080/api/medicine-shop-inventory/actuator/health
+
+HTTP/1.1 200 OK
+Content-Type: application/vnd.spring-boot.actuator.v3+json
+Date: Fri, 27 Mar 2020 11:28:06 GMT
+transfer-encoding: chunked
+
+{
+    "status": "UP"
+}
+```
