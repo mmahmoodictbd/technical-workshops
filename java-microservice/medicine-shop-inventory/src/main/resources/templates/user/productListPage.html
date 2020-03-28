@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Covid-19 Bangladesh Data</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <style>
+            .main {
+                float: right;
+                padding-right: 5%;
+                color: white;
+                padding: 2%;
+                opacity: 0.95;
+                border-top:3px solid #FFFFFF;
+            }
+
+            .centered {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id='container'>
+            <div class='main centered'>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">PurchasePrice</th>
+                        <th scope="col">Expire</th>
+                        <th scope="col">Stock</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:if="${products.totalPages == 0}">
+                            <td colspan="2"> No Product Available </td>
+                        </tr>
+                        <tr th:each="product : ${products.items}">
+                            <td><span th:text="${product.name}"> Name </span></td>
+                            <td><span th:text="${product.description}"> Description </span></td>
+                            <td><span th:text="${product.purchasePrice}"> PurchasePrice </span></td>
+                            <td><span th:text="${product.expire}"> Expire </span></td>
+                            <td><span th:text="${product.stock}"> Stock </span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>
