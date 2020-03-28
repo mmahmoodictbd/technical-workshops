@@ -14,3 +14,78 @@ $ git --version
 
 git version 2.21.1 (Apple Git-122.3)
 ```
+
+
+#### Commands
+
+```
+$ git clone https://github.com/mmahmoodictbd/technical-workshops.git
+```
+
+```
+$ cd technical-workshops
+$ touch git-github-basics/anyfile.txt
+$ echo "Hello" > git-github-basics/anyfile.txt
+$ git add git-github-basics/anyfile.txt
+```
+
+```
+$ git status
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   git-github-basics/anyfile.txt
+```
+
+```
+$ git commit -m "Added anyfile.txt"
+$ git push origin master
+```
+
+```
+$ echo "World" >> git-github-basics/anyfile.txt
+$ cat git-github-basics/anyfile.txt
+
+Hello
+World
+```
+
+```
+git diff
+
+diff --git a/git-github-basics/anyfile.txt b/git-github-basics/anyfile.txt
+index e965047..f9264f7 100644
+--- a/git-github-basics/anyfile.txt
++++ b/git-github-basics/anyfile.txt
+@@ -1 +1,2 @@
+ Hello
++World
+```
+
+```
+$ git add git-github-basics/anyfile.txt
+$ git commit -m "Modifying anyfile.txt"
+$ git push origin master
+```
+
+```
+$ cat .gitignore
+
+/.idea/
+/**/*.class
+/**/target/*
+```
+
+
+#### Advanced
+
+```
+$ git checkout -b mybranch
+$ echo "Bangladesh" > git-github-basics/anyfile.txt
+$ git commit -m "Added BD in anyfile.txt"
+$ git push origin mybranch
+```
