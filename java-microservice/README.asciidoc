@@ -10,8 +10,29 @@ Keep things small!
 - IDE (IntelliJ / Eclipse / Visual Studio Code).
 
 
+#### Run Service Registry (Eureka Server)
+
 ```
-http http://localhost:8080/api/medicine-shop-inventory/actuator/health
+$ cd java-microservice/service-registry
+$ mvn spring-boot:run
+```
+
+```
+# Eureka Server: Try it on browser
+http://localhost:8081/
+```
+
+
+#### Run Gateway
+
+```
+$ cd java-microservice/gateway
+$ mvn spring-boot:run
+```
+
+```
+# Try it on browser
+http://localhost:8080/actuator/health
 
 HTTP/1.1 200 OK
 Content-Type: application/vnd.spring-boot.actuator.v3+json
@@ -22,3 +43,36 @@ transfer-encoding: chunked
     "status": "UP"
 }
 ```
+
+
+#### Run medicine-shop-inventory Application
+
+```
+$ cd java-microservice/medicine-shop-inventory
+$ mvn spring-boot:run
+```
+
+```
+# Try it on browser
+http://localhost:8082/admin/inventory/list
+```
+
+
+```
+# Call through Gateway : Try it on browser
+http://localhost:8080/api/medicine-shop-inventory/admin/inventory/list
+```
+
+
+#### Run covid-19-bangladesh Application
+
+```
+$ cd java-web-application/covid-19-bangladesh
+$ mvn spring-boot:run -Dspring-boot.run.arguments="--server.port=8083 --eureka.client.enabled=true"
+```
+
+```
+# Call through Gateway : Try it on browser
+http://localhost:8080/api/covid-19-bangladesh/bangladesh
+```
+

@@ -16,3 +16,15 @@ Start with https://start.spring.io/[Spring Initializr].
 
 image::images/spring-initializr.png[spring-initializr screenshot]
 
+
+#### Run covid-19-bangladesh Application
+
+```
+$ cd java-web-application/covid-19-bangladesh
+$ mvn spring-boot:run -Dspring-boot.run.arguments="--eureka.client.enabled=false"
+```
+
+```
+# Try it on browser
+http://localhost:8080/bangladesh
+```
