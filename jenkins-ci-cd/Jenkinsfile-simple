@@ -1,0 +1,41 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Checkout') {
+         steps {
+            git 'https://github.com/mmahmoodictbd/technical-workshops.git'
+         }
+      }
+
+      stage('Run Test') {
+         steps {
+            sh """
+                cd java-web-application/covid-19-bangladesh
+                mvn test
+            """
+
+         }
+      }
+
+      stage('Build') {
+         steps {
+            sh """
+                cd java-web-application/covid-19-bangladesh
+                mvn package
+            """
+
+         }
+      }
+
+      stage('Deploy') {
+         steps {
+            sh """
+                cd java-web-application/covid-19-bangladesh
+                java -Dserver.port=9000 -jar target/covid-19-bangladesh-1.0.0.jar >/dev/null 2>&1
+            """
+
+         }
+      }
+   }
+}
