@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+
+  covid-19-bangladesh:
+    image: mmahmood/covid-19-bangladesh:latest
+    container_name: covid-19-bangladesh
+    ports:
+      - 32000:8080

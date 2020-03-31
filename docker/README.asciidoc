@@ -21,3 +21,33 @@ $ docker-compose -version
 
 docker-compose version 1.25.4, build 8d51620a
 ```
+
+
+#### Building the Docker Image
+
+```
+$ cd java-web-application/covid-19-bangladesh
+$ mvn dockerfile:build
+
+```
+
+
+#### Running the Docker Image
+```
+$ docker run -p 32000:8080 mmahmood/covid-19-bangladesh:latest
+
+# Try on your browser: http://localhost:32000/bangladesh
+```
+
+
+#### Pushing the Docker Image to DockerHub
+```
+$ docker login
+$ docker push mmahmood/covid-19-bangladesh:latest
+```
+
+
+#### Pull Docker Image
+```
+$ docker pull mmahmood/covid-19-bangladesh:latest
+```
