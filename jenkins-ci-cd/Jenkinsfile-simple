@@ -32,7 +32,7 @@ pipeline {
          steps {
             sh """
                 cd java-web-application/covid-19-bangladesh
-                java -Dserver.port=9000 -jar target/covid-19-bangladesh-1.0.0.jar >/dev/null 2>&1
+                nohup java -Dserver.port=9000 -jar target/covid-19-bangladesh-1.0.0.jar &
             """
 
          }
