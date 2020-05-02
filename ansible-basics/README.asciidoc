@@ -1,0 +1,31 @@
+# Ansible Basics
+
+Install/configure software to remote machines.
+
+
+#### Prerequisites
+
+- Install pip or pip3.
+
+
+#### Install
+
+```
+# One way of installing Ansible
+$ pip3 install --user ansible
+```
+
+
+#### Verify
+
+```
+$ ansible --version
+
+ansible 2.7.6
+  config file = None
+  configured module search path = ['/Users/mossaddeque/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /Users/mossaddeque/Library/Python/3.7/lib/python/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.7.7 (default, Mar 10 2020, 15:43:33) [Clang 11.0.0 (clang-1100.0.33.17)]
+```
+
