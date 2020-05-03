@@ -1,3 +1,7 @@
 /.idea/
 /**/*.class
 /**/target/*
+/**/*.iml
+/kubernetes-basics/kubernetes-setup/.vagrant
+/kubernetes-basics/kubernetes-setup/kubeconf
+/**/join-command

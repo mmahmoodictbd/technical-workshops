@@ -1,0 +1,35 @@
+# Kubernetes Setup
+
+
+#### Prerequisites
+- Install link:../ansible-basics/README.asciidoc[Ansible].
+- Install VirtualBox and Vagrant.
+- Install https://github.com/ahmetb/kubectx[kubectx] to help with switching context.
+- Install https://github.com/derailed/k9s[k9s], UI to your cluster.
+
+
+#### Prepare K8s cluster with Vagrant and Ansible
+Inspired by https://kubernetes.io/blog/2019/03/15/kubernetes-setup-using-ansible-and-vagrant/
+
+
+#### Configure kubectl in your machine
+```
+# Extract kubecofig from master node
+vagrant ssh k8s-master -c "sudo cat /etc/kubernetes/admin.conf" > kubeconf
+
+# Add kubeconf path to $PATH
+# Note: KUBECONFIG only exposed to current terminal, to make it permanent add it to ~/.bashrc or /~.zshrc.
+export KUBECONFIG=kubeconf:$HOME/.kube/config
+```
+
+
+#### Verify
+```
+$ kubectl get nodes
+
+NAME         STATUS   ROLES    AGE   VERSION
+k8s-master   Ready    master   60m   v1.18.2
+node-1       Ready    <none>   57m   v1.18.2
+node-2       Ready    <none>   54m   v1.18.2
+```
+
