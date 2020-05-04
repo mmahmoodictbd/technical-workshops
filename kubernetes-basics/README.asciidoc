@@ -1,0 +1,16 @@
+# Kubernetes Basics
+
+Manage docker container at scale.
+
+
+#### Prerequisites
+- Setup link:kubernetes-setup/README.asciidoc[Kubernetes cluster].
+- Install https://github.com/ahmetb/kubectx[kubectx] to help with switching context.
+- Install https://github.com/derailed/k9s[k9s], UI to your cluster.
+
+
+#### Access K8s cluster
+```
+$ k9s
+```
+image::../docs/images/k9s-screenshot.png[k9s screenshot]
