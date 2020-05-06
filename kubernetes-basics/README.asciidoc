@@ -9,8 +9,24 @@ Manage docker container at scale.
 - Install https://github.com/derailed/k9s[k9s], UI to your cluster.
 
 
+#### Set context
+```
+$ export KUBECONFIG=kubernetes-setup/kubeconf:$HOME/.kube/config
+$ kubectx kubernetes-admin@kubernetes
+```
+
+
 #### Access K8s cluster
 ```
 $ k9s
 ```
 image::../docs/images/k9s-screenshot.png[k9s screenshot]
+
+
+#### Deploy apps in K8s
+```
+$ kubectl apply -f javaapp-all-in-one.yml
+```
+```
+$ kubectl delete -f javaapp-all-in-one.yml
+```
