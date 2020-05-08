@@ -41,3 +41,21 @@ node-1       Ready    <none>   57m   v1.18.2
 node-2       Ready    <none>   54m   v1.18.2
 ```
 
+
+#### Vagrant Node Management
+```
+# To pause and resume
+$ vagrant suspend
+$ vagrant status
+Current machine states:
+
+k8s-master                saved (virtualbox)
+node-1                    saved (virtualbox)
+node-2                    saved (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+
+$ vagrant resume
+```
