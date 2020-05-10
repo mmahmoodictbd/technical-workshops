@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: echoapp-clusterip-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5678
+      targetPort: 5678
+  selector:
+    app: echoapp
+    
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echoapp-clusterip-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: echoapp
+  template:
+    metadata:
+      labels:
+        app: echoapp
+    spec:
+      containers:
+        - name: echoapp
+          image: hashicorp/http-echo
+          args:
+            - "-text=Hello!"
+          ports:
+            - containerPort: 5678
+---
+
+
+
