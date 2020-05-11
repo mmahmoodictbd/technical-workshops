@@ -24,9 +24,31 @@ image::../docs/images/k9s-screenshot.png[k9s screenshot]
 
 
 #### Deploy apps in K8s
+###### Access app with NodePort
 ```
-$ kubectl apply -f javaapp-all-in-one.yml
+$ kubectl apply -f javaapp-all-in-one-nodeport-access.yml
+# http://192.168.50.11:30001/bangladesh
 ```
 ```
-$ kubectl delete -f javaapp-all-in-one.yml
+$ kubectl delete -f javaapp-all-in-one-nodeport-access.yml
+```
+
+###### Access app with Port Forwarded ClusterIP
+```
+$ kubectl apply -f javaapp-all-in-one-clusterip-access.yml
+```
+```
+$ kubectl get pods
+
+NAME                                                        READY   STATUS    RESTARTS   AGE
+covid-19-bangladesh-clusterip-deployment-6d9dff65cd-ctp2z   1/1     Running   0          3m1s
+covid-19-bangladesh-clusterip-deployment-6d9dff65cd-nrpl2   1/1     Running   0          3m1s
+covid-19-bangladesh-clusterip-deployment-6d9dff65cd-wj6ff   1/1     Running   0          3m1s
+```
+```
+$ kubectl port-forward covid-19-bangladesh-clusterip-deployment-6d9dff65cd-ctp2z 5000:8080
+# http://localhost:5000/bangladesh
+```
+```
+$ kubectl delete -f javaapp-all-in-one-clusterip-access.yml
 ```
