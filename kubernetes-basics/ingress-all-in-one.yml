@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: covid19-app.info
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: covid-19-bangladesh-clusterip-service
+              servicePort: 8080
+    - host: echo-app.info
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: echoapp-clusterip-service
+              servicePort: 5678
