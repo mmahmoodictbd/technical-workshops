@@ -1,7 +1,46 @@
-/.idea/
-/**/*.class
-/**/target/*
-/**/*.iml
 /kubernetes-basics/kubernetes-setup/.vagrant
 /kubernetes-basics/kubernetes-setup/kubeconf
 /**/join-command
+
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
+/.idea/
+/**/*.iml
+
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode
+.factorypath
+
+# OSX
+.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+/**/target/*
+/**/*.class
